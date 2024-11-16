@@ -1,0 +1,10 @@
+SCR_GameModeEditor GameMode_Editor_Full1 : "{DA3986AF1B5032B7}Prefabs/MP/Modes/Editor/GameMode_Editor_Full.et" {
+ coords 2045.139 45.36 2066.337
+}
+SCR_ChimeraCharacter : "{8D89B17BCFBFAE44}Prefabs/Characters/Campaign/Final/Campaign_US_Player.et" {
+ components {
+  FLABBY_DEV_Earplugs_Component "{62DD49542BA6C187}" {
+  }
+ }
+ coords 2047.155 45.234 2065.849
+}
