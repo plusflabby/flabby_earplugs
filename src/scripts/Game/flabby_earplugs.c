@@ -29,9 +29,9 @@ class flabby_Earplugs
 		
 		// Suppression of all audio
 		AudioSystem.SetMasterVolume(AudioSystem.SFX, AudioSystem.GetMasterVolume(AudioSystem.SFX) - earplug_suppressed);
-		AudioSystem.SetMasterVolume(AudioSystem.Music, AudioSystem.GetMasterVolume(AudioSystem.VoiceChat) - earplug_suppressed);
-		AudioSystem.SetMasterVolume(AudioSystem.VoiceChat, AudioSystem.GetMasterVolume(AudioSystem.Dialog) - earplug_suppressed);
+		AudioSystem.SetMasterVolume(AudioSystem.Music, AudioSystem.GetMasterVolume(AudioSystem.Music) - earplug_suppressed);
+		AudioSystem.SetMasterVolume(AudioSystem.VoiceChat, AudioSystem.GetMasterVolume(AudioSystem.VoiceChat) - earplug_suppressed);
 		AudioSystem.SetMasterVolume(AudioSystem.Dialog, AudioSystem.GetMasterVolume(AudioSystem.Dialog) - earplug_suppressed);
-		AudioSystem.SetMasterVolume(AudioSystem.UI, AudioSystem.GetMasterVolume(AudioSystem.Dialog) - earplug_suppressed);
+		AudioSystem.SetMasterVolume(AudioSystem.UI, AudioSystem.GetMasterVolume(AudioSystem.UI) - earplug_suppressed);
 	}
 }

@@ -3,17 +3,6 @@
 //! !!!!!!!!!!!! !!
 class flabby_earplugs_chat_command : ScrServerCommand
 {
-	protected ScrServerCmdResult HandleCommand(array<string> argv, int playerId = 0)
-	{
-		if (argv.Count() > 1)
-		{
-			flabby_Earplugs.earplug_suppressed = 0;
-			flabby_Earplugs.suppressAll(string.Format("%1", argv[1]).ToInt());
-			return ScrServerCmdResult(string.Empty, EServerCmdResultType.OK);
-		}
-		return ScrServerCmdResult("ex = /ep 50", EServerCmdResultType.OK);
-	}
-	
 	// Specify keyword of command
 	//-----------------------------------------------------------------------------
 	override string GetKeyword()
@@ -53,20 +42,18 @@ class flabby_earplugs_chat_command : ScrServerCommand
 	//-----------------------------------------------------------------------------
 	override ref ScrServerCmdResult OnChatClientExecution(array<string> argv, int playerId)
 	{
-		return HandleCommand(argv, playerId);
-		
+		if (argv.Count() > 1)
+		{
+			flabby_Earplugs.earplug_suppressed = 0;
+			flabby_Earplugs.suppressAll(string.Format("%1", argv[1]).ToInt());
+			return ScrServerCmdResult("Success", EServerCmdResultType.OK);
+		}
+		return ScrServerCmdResult("Example is, #ep 50", EServerCmdResultType.OK);
 	}
 	
 	// Handle RCON command on server
 	//-----------------------------------------------------------------------------
 	override ref ScrServerCmdResult OnRCONExecution(array<string> argv)
-	{
-		return ScrServerCmdResult(string.Empty, EServerCmdResultType.OK);
-	}
-	
-	// Handle successful result in OnUpdate()
-	//-----------------------------------------------------------------------------
-	protected ScrServerCmdResult HandleSuccessfulResult()
 	{
 		return ScrServerCmdResult(string.Empty, EServerCmdResultType.OK);
 	}
